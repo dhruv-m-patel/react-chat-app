@@ -4,7 +4,10 @@ import store from 'store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faToggleOn } from '@fortawesome/free-solid-svg-icons/faToggleOn';
 import { faToggleOff } from '@fortawesome/free-solid-svg-icons/faToggleOff';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 import classnames from 'classnames/bind';
 import DefaultHelmet from '../DefaultHelmet';
 import styles from './Page.css';
@@ -42,27 +45,33 @@ export default function Page({
   return (
     <Container fluid className={cx('page', { darkTheme: hasSwitchedToDarkMode, lightTheme: !hasSwitchedToDarkMode })}>
       <DefaultHelmet title={title} description={description} />
-      <div className={cx('textRight')}>
-        Dark Mode
-        <FontAwesomeIcon
-          icon={hasSwitchedToDarkMode ? faToggleOn : faToggleOff}
-          size="2x"
-          onClick={switchToDarkMode}
-          className={cx('clickable', 'padTop10px')}
-        />
+      <div className={cx('navBar')}>
+        <Row>
+          <Col xs={{ span: 10 }}>
+            <div className={cx('app')}>
+              <header className={cx('appHeader')}>
+                <img src="/images/react.svg" className={cx('appLogo')} alt="logo" />
+                React Chat App
+              </header>
+            </div>
+          </Col>
+          <Col xs={{ span: 2 }}>
+            <div className={cx('textRight')}>
+              Dark Mode
+              <FontAwesomeIcon
+                icon={hasSwitchedToDarkMode ? faToggleOn : faToggleOff}
+                size="2x"
+                onClick={switchToDarkMode}
+                className={cx('clickable', 'padTop10px')}
+              />
+            </div>
+          </Col>
+        </Row>
       </div>
-      <div className={cx('app')}>
-        <header className={cx('appHeader')}>
-          <img src="/images/react.svg" className={cx('appLogo')} alt="logo" />
-          <h2>React App</h2>
-          <small>A React starter app with SSR support.</small>
-        </header>
-        <br />
-        <br />
-        <Container className={cx('content')}>
-          {children}
-        </Container>
-      </div>
+      <br />
+      <Container className={cx('content')} fluid>
+        {children}
+      </Container>
     </Container>
   );
 }

@@ -1,7 +1,7 @@
 {
-  "name": "react-app",
+  "name": "react-chat-app",
   "version": "1.0.0",
-  "description": "React app with SSR support",
+  "description": "A chat app built with React and Pusher's ChatKit",
   "main": "src/server.js",
   "scripts": {
     "build:server": "babel ./src --out-dir build",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dhruv-m-patel/react-app.git"
+    "url": "git+https://github.com/dhruv-m-patel/react-chat-app.git"
   },
   "keywords": [
     "react",
@@ -32,9 +32,9 @@
   ],
   "author": "Dhruv Patel",
   "bugs": {
-    "url": "https://github.com/dhruv-m-patel/react-app/issues"
+    "url": "https://github.com/dhruv-m-patel/react-chat-app/issues"
   },
-  "homepage": "https://github.com/dhruv-m-patel/react-app#readme",
+  "homepage": "https://github.com/dhruv-m-patel/react-chat-app#readme",
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.5.5",

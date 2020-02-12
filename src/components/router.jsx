@@ -5,8 +5,7 @@ import loadable from '@loadable/component'
 export default function Router() {
   return (
     <Switch>
-      <Route exact path="/" component={loadable(() => import('./HomePage'))} />
-      <Route exact path="/redux-example" component={loadable(() => import('./ReduxExamplePage'))} />
+      <Route exact path="/" component={loadable(() => import('./ChatRoom'))} />
       <Route component={loadable(() => import('./NotFound'))} />
     </Switch>
   );
