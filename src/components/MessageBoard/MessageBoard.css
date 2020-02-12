@@ -1,0 +1,15 @@
+@import '../../styles/variables.css';
+
+.messageBoard {
+  padding: 0.5rem 1rem;
+  height: 92%;
+}
+
+.dark.messageBoard {
+  background-color: var(--backgroundColor);
+  color: var(--white);
+}
+
+.light.messageBoard {
+  background-color: var(--grey);
+}

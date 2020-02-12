@@ -35,10 +35,6 @@ html {
   background-color: var(--backgroundColor);
   color: var(--white);
 
-  & .navBar {
-    background-color: var(--black);
-  }
-
   & a {
     color: var(--blue);
   }

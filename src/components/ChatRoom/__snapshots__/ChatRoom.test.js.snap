@@ -65,9 +65,30 @@ exports[`ChatRoom it should render 1`] = `
       className="row"
     >
       <div
-        className="col-md-4 col-sm-10 offset-md-4 offset-sm-1"
+        className="col-sm-4 col-10 offset-sm-4 offset-1"
       >
-        Chat room will appear here
+        <div
+          className="ChatRoom__chatroom___1rhtu container"
+        >
+          <div
+            className="light Smartphone__smartphone___VmVC5"
+          >
+            <div
+              className="Smartphone__content___12Svw"
+            >
+              <div
+                className="MessageBoard__light___3wjYC MessageBoard__messageBoard___12gbl"
+              >
+                Message Board
+              </div>
+              <div
+                className="SendMessageForm__light___3WIoQ SendMessageForm__sendMessageForm___2nHAp"
+              >
+                Send Message Form
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

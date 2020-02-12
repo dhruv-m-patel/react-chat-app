@@ -7,9 +7,9 @@ import { faToggleOff } from '@fortawesome/free-solid-svg-icons/faToggleOff';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
 import classnames from 'classnames/bind';
 import DefaultHelmet from '../DefaultHelmet';
+import PageContext from '../../context/PageContext';
 import styles from './Page.css';
 
 const cx = classnames.bind(styles);
@@ -43,36 +43,38 @@ export default function Page({
   }, [hasSwitchedToDarkMode])
 
   return (
-    <Container fluid className={cx('page', { darkTheme: hasSwitchedToDarkMode, lightTheme: !hasSwitchedToDarkMode })}>
-      <DefaultHelmet title={title} description={description} />
-      <div className={cx('navBar')}>
-        <Row>
-          <Col xs={{ span: 10 }}>
-            <div className={cx('app')}>
-              <header className={cx('appHeader')}>
-                <img src="/images/react.svg" className={cx('appLogo')} alt="logo" />
-                React Chat App
-              </header>
-            </div>
-          </Col>
-          <Col xs={{ span: 2 }}>
-            <div className={cx('textRight')}>
-              Dark Mode
-              <FontAwesomeIcon
-                icon={hasSwitchedToDarkMode ? faToggleOn : faToggleOff}
-                size="2x"
-                onClick={switchToDarkMode}
-                className={cx('clickable', 'padTop10px')}
-              />
-            </div>
-          </Col>
-        </Row>
-      </div>
-      <br />
-      <Container className={cx('content')} fluid>
-        {children}
+    <PageContext.Provider value={{ theme: hasSwitchedToDarkMode ? 'dark' : 'light' }}>
+      <Container fluid className={cx('page', { darkTheme: hasSwitchedToDarkMode, lightTheme: !hasSwitchedToDarkMode })}>
+        <DefaultHelmet title={title} description={description} />
+        <div className={cx('navBar')}>
+          <Row>
+            <Col xs={{ span: 10 }}>
+              <div className={cx('app')}>
+                <header className={cx('appHeader')}>
+                  <img src="/images/react.svg" className={cx('appLogo')} alt="logo" />
+                  React Chat App
+                </header>
+              </div>
+            </Col>
+            <Col xs={{ span: 2 }}>
+              <div className={cx('textRight')}>
+                Dark Mode
+                <FontAwesomeIcon
+                  icon={hasSwitchedToDarkMode ? faToggleOn : faToggleOff}
+                  size="2x"
+                  onClick={switchToDarkMode}
+                  className={cx('clickable', 'padTop10px')}
+                />
+              </div>
+            </Col>
+          </Row>
+        </div>
+        <br />
+        <Container className={cx('content')} fluid>
+          {children}
+        </Container>
       </Container>
-    </Container>
+    </PageContext.Provider>
   );
 }
 
