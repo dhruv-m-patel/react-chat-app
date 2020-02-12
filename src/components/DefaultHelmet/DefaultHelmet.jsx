@@ -17,6 +17,6 @@ DefaultHelmet.propTypes = {
 };
 
 DefaultHelmet.defaultProps = {
-  title: 'React App',
-  description: 'A boilerplate React app with SSR support',
+  title: 'React Chat App',
+  description: 'A chat app built with React and Pisher\'s ChatKit',
 };

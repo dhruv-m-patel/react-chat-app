@@ -26,9 +26,18 @@ html {
   text-align: right;
 }
 
+.navBar {
+  margin: 0 -1rem;
+  padding: 0.5rem 0;
+}
+
 .darkTheme {
   background-color: var(--backgroundColor);
   color: var(--white);
+
+  & .navBar {
+    background-color: var(--black);
+  }
 
   & a {
     color: var(--blue);
@@ -46,6 +55,10 @@ html {
 .lightTheme {
   background-color: var(--white);
   color: var(--black);
+
+  & .navBar {
+    background-color: var(--grey);
+  }
 
   & a {
     color: var(--dark-blue);
@@ -72,19 +85,15 @@ html {
 }
 
 .app {
-  text-align: center;
+  text-align: left;
 }
 
 .appLogo {
-  height: 40vmin;
+  height: 5vmin;
   pointer-events: none;
 }
 
 .appHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
 }
 

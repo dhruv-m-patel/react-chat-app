@@ -1,11 +1,11 @@
 import Tester from '../../../tests/Tester';
-import HomePage from './HomePage';
+import ChatRoom from './ChatRoom';
 
 const tester = new Tester();
 
-describe('HomePage', () => {
+describe('ChatRoom', () => {
   test('it should render', () => {
-    const snapshot = tester.getSnapshot(HomePage);
+    const snapshot = tester.getSnapshot(ChatRoom);
     expect(snapshot).toMatchSnapshot();
   });
 });
