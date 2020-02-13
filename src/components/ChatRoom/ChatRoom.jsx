@@ -24,6 +24,7 @@ export default function ChatRoom({
   const [messages, setMessages] = useState([]);
   const [chatUser, setChatUser] = useState();
 
+  // Initialize chatManager instance to interact with Chatkit API
   useEffect(() => {
     const chatManagerInstance = new Chatkit.ChatManager({
       instanceLocator: instanceLocator,
@@ -35,6 +36,7 @@ export default function ChatRoom({
     setChatManager(chatManagerInstance);
   }, [instanceLocator, receiver, instanceUrl]);
 
+  // When chatManager becomes available, connect it and set chatUser and subscribe to messages
   useEffectWithDeepCompare(() => {
     if (chatManager) {
       chatManager.connect()
@@ -54,6 +56,7 @@ export default function ChatRoom({
     }
   }, [chatManager, chatUser]);
 
+  // When a new message is received, add it to collection of messages cached
   useEffectWithDeepCompare(() => {
     if (newMessage) {
       setMessages([].concat(messages, newMessage));

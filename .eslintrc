@@ -1,18 +1,21 @@
 {
+  "parser": "babel-eslint",
   "plugins": [
     "react"
   ],
   "extends":  [
     "standard",
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
   ],
   "settings": {
     "react": {
       "version": "detect"
     }
   },
-  "parser": "babel-eslint",
+  "env": {
+    "jest": true
+  },
   "rules": {
     "semi": [0],
     "space-before-function-paren": [0],
