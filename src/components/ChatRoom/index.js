@@ -6,7 +6,6 @@ function mapStateToProps({ config }) {
     instanceLocator: config.instanceLocator,
     receiver: config.receiverUser,
     instanceUrl: config.authToken,
-    chatroomId: config.chatroomId,
   };
 }
 

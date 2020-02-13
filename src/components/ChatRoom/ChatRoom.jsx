@@ -18,7 +18,6 @@ export default function ChatRoom({
   instanceLocator,
   receiver,
   instanceUrl,
-  chatroomId,
 }) {
   const [chatManager, setChatManager] = useState();
   const [newMessage, setNewMessage] = useState();
@@ -36,11 +35,13 @@ export default function ChatRoom({
     setChatManager(chatManagerInstance);
   }, [instanceLocator, receiver, instanceUrl]);
 
-  useEffect(() => {
-    if (chatManager && chatroomId) {
+  useEffectWithDeepCompare(() => {
+    if (chatManager) {
       chatManager.connect()
         .then((user) => {
-          setChatUser(user);
+          if (!chatUser) {
+            setChatUser(user);
+          }
           user.subscribeToRoomMultipart({
             roomId: user.rooms[0].id,
             hooks: {
@@ -51,7 +52,7 @@ export default function ChatRoom({
           });
         });
     }
-  }, [chatManager, chatroomId]);
+  }, [chatManager, chatUser]);
 
   useEffectWithDeepCompare(() => {
     if (newMessage) {
@@ -79,5 +80,4 @@ ChatRoom.propTypes = {
   instanceLocator: PropTypes.string.isRequired,
   receiver: PropTypes.string.isRequired,
   instanceUrl: PropTypes.string.isRequired,
-  chatroomId: PropTypes.string.isRequired,
 };
