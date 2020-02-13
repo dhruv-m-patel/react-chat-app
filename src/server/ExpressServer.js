@@ -59,7 +59,8 @@ export default class ExpressServer {
         path: handlers.path(rootDirectory),
         buildpath: handlers.path(path.join(rootDirectory, 'build')),
         require: betterRequire(rootDirectory),
-        regex: shortstopRegex()
+        regex: shortstopRegex(),
+        env: handlers.env(),
       }
     });
     this.configurations.push(configFactory);

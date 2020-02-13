@@ -5,6 +5,17 @@
     "format": "combined",
     "options": {}
   },
+  "services": {
+    "pusher": {
+      "chatKit": {
+        "instanceLocator": "env:PUSHER_CHATKIT_INSTANCE_LOCATOR",
+        "secretKey": "env:PUSHER_CHATKIT_SECRET_KEY",
+        "chatroomId": "env:PUSHER_CHATKIT_CHATROOM_ID",
+        "authToken": "env:PUSHER_CHATKIT_AUTH_TOKEN",
+        "receiverUser": "env:PUSHER_CHATKIT_RECEIVER_USER",
+      }
+    }
+  },
   "meddleware": {
     "logger": {
       "priority": 20,

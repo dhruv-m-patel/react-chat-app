@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import testReducer from './test-reducer';
+import configReducer from './config';
 
 let DEFAULT_STATE = {
-  test: testReducer(),
+  config: configReducer(),
 };
 
 if (typeof window !== 'undefined' && window.__PRELOADED_STATE__) {
@@ -13,6 +13,6 @@ if (typeof window !== 'undefined' && window.__PRELOADED_STATE__) {
 }
 
 export default combineReducers({
-  test: testReducer,
+  config: configReducer,
 });
 export { DEFAULT_STATE };
