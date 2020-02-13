@@ -79,12 +79,55 @@ exports[`ChatRoom it should render 1`] = `
               <div
                 className="MessageBoard__light___3wjYC MessageBoard__messageBoard___12gbl"
               >
-                Message Board
+                <ul
+                  className="MessageBoard__messageList___2aZ1q"
+                />
               </div>
               <div
                 className="SendMessageForm__light___3WIoQ SendMessageForm__sendMessageForm___2nHAp"
               >
-                Send Message Form
+                <form
+                  className=""
+                  onSubmit={[Function]}
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <input
+                      className="form-control"
+                      onKeyUp={[Function]}
+                      type="text"
+                    />
+                    <div
+                      className="input-group-append"
+                    >
+                      <button
+                        className="btn btn-outline-primary btn-xs"
+                        disabled={false}
+                        onClick={[Function]}
+                        type="submit"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="svg-inline--fa fa-paper-plane fa-w-16 fa-1x "
+                          data-icon="paper-plane"
+                          data-prefix="fas"
+                          focusable="false"
+                          role="img"
+                          style={Object {}}
+                          viewBox="0 0 512 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
+                            fill="currentColor"
+                            style={Object {}}
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
