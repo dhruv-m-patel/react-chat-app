@@ -1,4 +1,4 @@
-![Preview](https://github.com/dhruv-m-patel/react-chat-app/blob/master/React_Chat_App.png)
+![Preview](https://github.com/dhruv-m-patel/react-chat-app/blob/master/React_Chat_App_Preview.png)
 
 # react-chat-app
 
