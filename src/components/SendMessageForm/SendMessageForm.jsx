@@ -20,7 +20,6 @@ export default function SendMessageForm({
 
   const handleSendMessage = useCallback((e) => {
     e.preventDefault();
-    console.log('message: ', message);
     if (message) {
       user.sendSimpleMessage({
         text: message,
@@ -35,7 +34,7 @@ export default function SendMessageForm({
   }, []);
 
   return (
-    <div className={cx(pageContext.theme, 'sendMessageForm')}>
+    <div className={cx((pageContext || {}).theme, 'sendMessageForm')}>
       <Form onSubmit={handleSendMessage}>
         <InputGroup>
           <Form.Control type="text" onKeyUp={handleMessageChange} />

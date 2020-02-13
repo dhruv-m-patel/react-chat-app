@@ -12,7 +12,7 @@ export default function MessageBoard({
   const pageContext = useContext(PageContext);
 
   return (
-    <div className={cx(pageContext.theme, 'messageBoard')}>
+    <div className={cx((pageContext || {}).theme, 'messageBoard')}>
       <ul className={cx('messageList')}>
         {messages.map(message => message && (
           <li key={message.parts[0].payload.content} className={cx('message', message.senderId)}>
